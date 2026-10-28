@@ -4,7 +4,11 @@ La selección usa únicamente validación cruzada del conjunto de entrenamiento;
 el conjunto de prueba queda reservado para estimar el rendimiento final.
 """
 
+import sys
 import pandas as pd
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 import numpy as np
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.pipeline import Pipeline
